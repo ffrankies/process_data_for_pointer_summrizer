@@ -26,8 +26,8 @@ all_urls = "all_urls.txt"  # This should be in the local directory
 
 tokenized_stories_dir = "tokenized_stories"
 
-# cnn_tokenized_stories_dir = "cnn_stories_tokenized"
-# dm_tokenized_stories_dir = "dm_stories_tokenized"
+cnn_tokenized_stories_dir = "cnn_stories_tokenized"
+dm_tokenized_stories_dir = "dm_stories_tokenized"
 finished_files_dir = "finished_files"
 chunks_dir = os.path.join(finished_files_dir, "chunked")
 
@@ -294,8 +294,7 @@ if __name__ == '__main__':
     # write_to_bin(all_train_urls, os.path.join(finished_files_dir, "train.bin"), makevocab=True)
 
     # all purpose write passed in data dir to .bin with a vocab file
-    write_to_bin(all_urls, os.path.join(
-        finished_files_dir, story_type), makevocab=True)
+    write_to_bin(all_urls, os.path.join(finished_files_dir, story_type), makevocab=True)
 
     # Chunk the data. This splits each of train.bin, val.bin and test.bin into smaller chunks, each containing e.g. 1000 examples, and saves them in finished_files/chunks
     chunk_all()

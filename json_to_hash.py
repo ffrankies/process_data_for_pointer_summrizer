@@ -18,6 +18,8 @@ def processJSON(jsonFile, outputDir):
     if not os.path.exists(outputDir):
         os.makedirs(outputDir)
 
+    url = 0
+
     URL_FILE = open('all_urls.txt', 'w')
 
     # go through the JSON and pull each entry into separate line
@@ -29,10 +31,13 @@ def processJSON(jsonFile, outputDir):
 
     for line in lines:
 
+        if "_1" in line:
+            line = line["_1"]
         # define here for URL and article text what the JSON dictionary keys are
         # url = line['URL']
         url = line['URL_s']
         # url = line['originalUrl']
+        # url += 1
 
         # sentences = line['Sentences']
         sentences = line['Sentences_t']
